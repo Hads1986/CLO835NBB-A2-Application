@@ -1,2 +1,2 @@
-# CLO835NBB-A2-Application
-This is the repository for the application part in assignment2
+# clo835-a1-application
+Repository for the application and git workflow
