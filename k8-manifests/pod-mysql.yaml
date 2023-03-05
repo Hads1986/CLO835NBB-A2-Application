@@ -1,10 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: webapp-pod
+  name: mysql-pod
 spec:
   containers:
-  - name: webapp-container
+  - name: mysql-container
     image: 070752711409.dkr.ecr.us-east-1.amazonaws.com/clo835-repo:db.v0.1
     ports:
     - containerPort: 3306
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: db_pass123
+    - name: DBPORT
+      value: "3306"
