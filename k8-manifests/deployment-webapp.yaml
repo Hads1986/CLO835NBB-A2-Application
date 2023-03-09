@@ -24,7 +24,7 @@ spec:
         - containerPort: 8080
         env:
         - name: DBHOST
-          value: "10.244.0.7"
+          value: "10.244.0.15"
         - name: DBPORT
           value: "3306"
         - name: DBPWD
