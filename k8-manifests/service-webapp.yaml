@@ -3,8 +3,7 @@ kind: Service
 metadata:
   name: webapp
   labels:
-    app.kubernetes.io/name: employees
-    app.kubernetes.io/component: frontend
+    app: employees
 spec:
   type: NodePort
   externalName: mysql.prod.svc.cluster.local  
@@ -13,5 +12,4 @@ spec:
     targetPort: 8080
     nodePort: 30000
   selector:
-    app.kubernetes.io/name: employees
-    app.kubernetes.io/component: frontend
+    app: employees

@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: frontend
+  name: webapp
+  labels:
+    app: employees
 spec:
   replicas: 3
   selector:
@@ -13,13 +15,13 @@ spec:
         app: employees
     spec:
       containers:
-      - name: frontend
+      - name: webapp
         image: 070752711409.dkr.ecr.us-east-1.amazonaws.com/clo835-repo:app.v0.1
         ports:
         - containerPort: 8080
         env:
         - name: DBHOST
-          value: "10.244.0.22"
+          value: "10.244.0.17"
         - name: DBPORT
           value: "3306"
         - name: DBPWD
