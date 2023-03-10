@@ -6,7 +6,8 @@ RUN set -xe \
     && apt-get update -y \
     && apt-get install -y python3-pip \
     && apt-get install -y mysql-client \
-    && apt-get install -y iputils-ping
+    && apt-get install -y iputils-ping \
+    && apt-get install -y dnsutils
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 EXPOSE 8080
