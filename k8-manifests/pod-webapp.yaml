@@ -8,7 +8,7 @@ spec:
     image: 070752711409.dkr.ecr.us-east-1.amazonaws.com/clo835-repo:app.v0.1
     env:
     - name: DBHOST
-      value: "10.244.0.22"
+      value: "10.244.0.51"
     - name: DBPORT
       value: "3306"
     - name: DBPWD

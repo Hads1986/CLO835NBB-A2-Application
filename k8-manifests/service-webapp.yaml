@@ -6,7 +6,7 @@ metadata:
     app: employees
 spec:
   type: NodePort
-  externalName: mysql.prod.svc.cluster.local  
+  externalName: mysql.backend.svc.cluster.local  
   ports:
   - port: 8080
     targetPort: 8080

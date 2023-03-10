@@ -5,10 +5,10 @@ metadata:
   labels:
     app: employees
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: employees
-  replicas: 3
   template:
     metadata:
       labels:
@@ -16,13 +16,18 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: 070752711409.dkr.ecr.us-east-1.amazonaws.com/clo835-repo:app.v0.1
+        image: 070752711409.dkr.ecr.us-east-1.amazonaws.com/clo835-repo:app.v0.2
         ports:
         - containerPort: 8080
         env:
         - name: DBHOST
-          value: "10.244.0.24"
+          value: "mysql.backend.svc.cluster.local"
         - name: DBPORT
           value: "3306"
         - name: DBPWD
-          value: "db_pass123"  
+          value: "db_pass123"
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1    
